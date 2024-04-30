@@ -15,15 +15,18 @@ function startStopwatch() {
     running = true;
     updateStopwatch();
     document.getElementById("startBtn").innerText = "Stop";
-    document.getElementById("startBtn").classList.remove("start-button");
-    document.getElementById("startBtn").classList.add("pause-button");
+    toggleStopwatchBtnColor("start-button", "pause-button");
   } else {
     running = false;
     pausedTime = Date.now() - startTime;
     document.getElementById("startBtn").innerText = "Play";
-    document.getElementById("startBtn").classList.remove("pause-button");
-    document.getElementById("startBtn").classList.add("start-button");
+    toggleStopwatchBtnColor("pause-button", "start-button");
   }
+}
+
+function toggleStopwatchBtnColor(firstClass, secondClass) {
+  document.getElementById("startBtn").classList.remove(firstClass);
+  document.getElementById("startBtn").classList.add(secondClass);
 }
 
 function pauseStopwatch() {
@@ -37,6 +40,7 @@ function resetStopwatch() {
   pausedTime = 0;
   document.getElementById("display").innerText = "00:00:00.00";
   document.getElementById("startBtn").innerText = "Start";
+  toggleStopwatchBtnColor("pause-button", "start-button");
   laps = [];
   updateLapsList();
 }
