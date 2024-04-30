@@ -4,8 +4,8 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Gentle gray background */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #98a2f0; /* Gentle gray background */
 }
 
 .stopwatch-container {
@@ -14,8 +14,8 @@ body {
 }
 
 .stopwatch-display {
-  background-color: #fff; /* White background */
-  color: #333; /* Dark gray text color */
+  background-color: #111111; /* White background */
+  color: white; /* Dark gray text color */
   padding: 20px;
   margin: 0 auto;
   font-size: 3em;
