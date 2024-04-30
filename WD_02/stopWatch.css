@@ -1,0 +1,90 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Gentle gray background */
+}
+
+.stopwatch-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.stopwatch-display {
+  background-color: #fff; /* White background */
+  color: #333; /* Dark gray text color */
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 3em;
+  margin-bottom: 20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid #ddd; /* Light gray border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.start-button {
+  background-color: #4caf50; /* Soft green */
+}
+
+.pause-button {
+  background-color: #f44336;
+}
+
+.reset-button {
+  background-color: #ffc107;
+}
+
+.lap-button {
+  background-color: #2196f3; /* Soft blue */
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.laps-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 200px;
+  color: #333; /* Dark gray text color */
+}
+
+.lap-item {
+  padding: 10px;
+  background-color: #fff; /* White background */
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+.lap-item:last-child {
+  border-bottom: none;
+}
+
+.lap-item:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
