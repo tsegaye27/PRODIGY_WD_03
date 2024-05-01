@@ -61,15 +61,15 @@ function handleCellClick(event) {
     board[cellIndex] = currentPlayer;
     event.target.textContent = currentPlayer;
     checkGameStatus();
-    togglePlayer();
+    togglePlayer("X", "O");
     if (isAI && gameActive && currentPlayer === "O") {
       setTimeout(makeAIMove, 500);
     }
   }
 }
 
-function togglePlayer() {
-  currentPlayer = currentPlayer === "X" ? "O" : "X";
+function togglePlayer(first, second) {
+  currentPlayer = currentPlayer === first ? second : first;
 }
 
 function checkGameStatus() {
@@ -78,7 +78,9 @@ function checkGameStatus() {
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
       gameActive = false;
       highlightWinningCells(a, b, c);
-      status.textContent = `${currentPlayer} wins!`;
+      status.textContent = `${
+        isAI ? currentPlayer : currentPlayer === "X" ? "Player 1" : "Player 2"
+      } wins!`;
       return;
     }
   }
@@ -116,5 +118,5 @@ function makeAIMove() {
   board[cellIndex] = currentPlayer;
   cells[cellIndex].textContent = currentPlayer;
   checkGameStatus();
-  togglePlayer();
+  togglePlayer("X", "O");
 }
