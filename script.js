@@ -28,26 +28,26 @@ const winningCombos = [
   [2, 4, 6],
 ];
 
+function gameSetup(modeSelectionDisplay, gameContainerDisplay, backBtnDisplay) {
+  modeSelection.style.display = modeSelectionDisplay;
+  gameContainer.style.display = gameContainerDisplay;
+  backBtn.style.display = backBtnDisplay;
+}
+
 function startAIGame() {
   isAI = true;
-  modeSelection.style.display = "none";
-  gameContainer.style.display = "block";
-  backBtn.style.display = "block";
+  gameSetup("none", "block", "block");
   resetGame();
 }
 
 function startTwoPlayerGame() {
   isAI = false;
-  modeSelection.style.display = "none";
-  gameContainer.style.display = "block";
-  backBtn.style.display = "block";
+  gameSetup("none", "block", "block");
   resetGame();
 }
 
 function goBackToModeSelection() {
-  modeSelection.style.display = "block";
-  gameContainer.style.display = "none";
-  backBtn.style.display = "none";
+  gameSetup("block", "none", "none");
 }
 
 cells.forEach((cell) => cell.addEventListener("click", handleCellClick));
