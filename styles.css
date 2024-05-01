@@ -1,7 +1,16 @@
+* {
+  font-family: monospace;
+}
+
+:root {
+  --primary-color: #38f138;
+  --secondary-color: #dfdfdfe6;
+}
+
 body {
   margin: 0;
   font-family: monospace;
-  background: black;
+  background: rgb(0, 0, 0);
 }
 .container {
   display: flex;
@@ -11,7 +20,8 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+h1,
+h3 {
   color: white;
 }
 
@@ -23,16 +33,16 @@ h1 {
   padding: 10px 20px;
   font-size: 18px;
   margin: 0 10px;
-  background-color: #4caf50;
+  background-color: black;
   color: white;
-  border: none;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .mode-selection button:hover {
-  background-color: #45a049;
+  box-shadow: 1px 1px 10px var(--primary-color);
 }
 
 #gameContainer {
@@ -46,40 +56,32 @@ h1 {
   grid-template-columns: repeat(3, 100px);
   gap: 10px;
   margin-top: 20px;
-  background: linear-gradient(
-    to bottom right,
-    #00bcd4,
-    #2196f3,
-    #4caf50
-  ); /* Updated linear gradient */
+  background: black; /* Updated linear gradient */
   padding: 10px;
+  border: 3px solid var(--secondary-color);
   border-radius: 10px;
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  background: linear-gradient(
-    to bottom,
-    #1a1a1a,
-    #000000
-  ); /* Blackish linear gradient */
+  background: #606060; /* Blackish linear gradient */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 36px;
-  color: white;
+  color: var(--secondary-color);
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
+.win {
+  border: 2px solid #4ef43c;
+}
+
 .cell:hover {
-  background: linear-gradient(
-    to bottom,
-    #000000,
-    #1a1a1a
-  ); /* Reverse gradient on hover */
+  background: #777777;
 }
 .status {
   font-size: 24px;
@@ -92,32 +94,32 @@ h1 {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #f44336;
+  background-color: black;
   color: white;
-  border: none;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 #backBtn:hover {
-  background-color: #d32f2f;
+  box-shadow: 1px 1px 10px var(--primary-color);
 }
 
 #resetBtn {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #2196f3;
+  background-color: black;
   color: white;
-  border: none;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 #resetBtn:hover {
-  background-color: #0b7dda;
+  box-shadow: 1px 1px 10px var(--primary-color);
 }
 
 .btn-container {
