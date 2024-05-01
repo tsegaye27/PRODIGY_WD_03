@@ -3,6 +3,7 @@ const aiModeBtn = document.getElementById("aiModeBtn");
 const twoPlayerModeBtn = document.getElementById("twoPlayerModeBtn");
 const gameContainer = document.getElementById("gameContainer");
 const backBtn = document.getElementById("backBtn");
+const modeTitle = document.querySelector(".mode-title");
 
 aiModeBtn.addEventListener("click", startAIGame);
 twoPlayerModeBtn.addEventListener("click", startTwoPlayerGame);
@@ -28,26 +29,27 @@ const winningCombos = [
   [2, 4, 6],
 ];
 
-function gameSetup(modeSelectionDisplay, gameContainerDisplay, backBtnDisplay) {
-  modeSelection.style.display = modeSelectionDisplay;
-  gameContainer.style.display = gameContainerDisplay;
-  backBtn.style.display = backBtnDisplay;
+function gameSetup(mode, container, back, title) {
+  modeSelection.style.display = mode;
+  gameContainer.style.display = container;
+  backBtn.style.display = back;
+  modeTitle.style.display = title;
 }
 
 function startAIGame() {
   isAI = true;
-  gameSetup("none", "block", "block");
+  gameSetup("none", "block", "block", "none");
   resetGame();
 }
 
 function startTwoPlayerGame() {
   isAI = false;
-  gameSetup("none", "block", "block");
+  gameSetup("none", "block", "block", "none");
   resetGame();
 }
 
 function goBackToModeSelection() {
-  gameSetup("block", "none", "none");
+  gameSetup("block", "none", "none", "block");
 }
 
 cells.forEach((cell) => cell.addEventListener("click", handleCellClick));
