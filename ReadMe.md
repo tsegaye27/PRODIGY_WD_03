@@ -30,6 +30,14 @@ The Tic-Tac-Toe Game is developed using:
 
 ## Demo
 
+# Select Mode
+
 ![Tic-Tac-Toe Game Demo](img/tictactoe1.png)
+
+# Play Against AI
+
 ![Tic-Tac-Toe Game Demo](img/tictactoe2.png)
+
+# Play with another person
+
 ![Tic-Tac-Toe Game Demo](img/tictactoe3.png)
